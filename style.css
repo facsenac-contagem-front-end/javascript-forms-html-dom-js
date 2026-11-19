@@ -416,3 +416,7 @@ button[type="reset"]:hover,
     display: none;
   }
 }
+
+.options {
+  flex-direction: row;
+}

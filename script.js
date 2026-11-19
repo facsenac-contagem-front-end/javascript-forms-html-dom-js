@@ -8,6 +8,11 @@
 // Se aparecer, o script.js está ligado ao index.html.
 console.log("script.js carregado!");
 
+//const titulo = document.getElementsByTagName("h1")[0];
+//console.log(titulo);//
+//titulo.style.color = "red";
+//titulo.style.backgroundColor = "silver";
+//titulo.innerText = "Super Sayajin 2";//
 
 // ---------------------------------------------------------
 // 1. CAPTURAR os elementos do formulário
