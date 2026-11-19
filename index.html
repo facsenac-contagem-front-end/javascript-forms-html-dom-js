@@ -35,7 +35,69 @@
         <!-- PARTE 1: monte o formulário aqui dentro -->
         <div id="app" class="cartao">
 
-          <!-- Seu <form> vai aqui -->
+          <form id="form-aluno" novalidate>
+
+            <fieldset>
+              <legend>Dados do aluno</legend>
+
+              <div class="campo">
+                <label for="nome">Nome completo</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+              </div>
+
+              <div class="campo">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="voce@exemplo.com">
+              </div>
+
+              <div class="campo">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" placeholder="Mínimo de 6 caracteres">
+              </div>
+
+              <div class="campo">
+                <label for="curso">Curso</label>
+                <select id="curso" name="curso">
+                  <option value="">Selecione um curso</option>
+                  <option value="Análise e Desenvolvimento de Sistemas">Análise e Desenvolvimento de Sistemas</option>
+                  <option value="Ciência da Computação">Ciência da Computação</option>
+                  <option value="Sistemas de Informação">Sistemas de Informação</option>
+                  <option value="Design Gráfico">Design Gráfico</option>
+                </select>
+              </div>
+
+              <div class="campo">
+                <label>Turno</label>
+                <div class="opcoes">
+                  <div class="opcao">
+                    <input type="radio" id="turno-manha" name="turno" value="Manhã">
+                    <label for="turno-manha">Manhã</label>
+                  </div>
+                  <div class="opcao">
+                    <input type="radio" id="turno-tarde" name="turno" value="Tarde">
+                    <label for="turno-tarde">Tarde</label>
+                  </div>
+                  <div class="opcao">
+                    <input type="radio" id="turno-noite" name="turno" value="Noite">
+                    <label for="turno-noite">Noite</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="opcao">
+                <input type="checkbox" id="termos" name="termos">
+                <label for="termos">Li e aceito as regras da turma</label>
+              </div>
+            </fieldset>
+
+            <p id="mensagem" class="mensagem"></p>
+
+            <div class="botoes">
+              <button type="button" id="btn-cadastrar">Cadastrar</button>
+              <button type="reset">Limpar</button>
+            </div>
+
+          </form>
 
         </div>
 

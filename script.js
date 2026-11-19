@@ -20,6 +20,19 @@ console.log("script.js carregado!");
 //   a lista de alunos (#lista-alunos) e o aviso de lista vazia (#lista-vazia)
 
 
+const campoNome = document.getElementById("nome");
+const campoEmail = document.getElementById("email");
+const campoSenha = document.getElementById("senha");
+const campoCurso = document.getElementById("curso");
+const campoTermos = document.getElementById("termos");
+const camposTurno = document.querySelectorAll('input[name="turno"]');
+const mensagem = document.getElementById("mensagem");
+const botao = document.getElementById("btn-cadastrar");
+const formulario = document.getElementById("form-aluno");
+const listaAlunos = document.getElementById("lista-alunos");
+const listaVazia = document.getElementById("lista-vazia");
+
+
 
 
 // ---------------------------------------------------------
@@ -37,6 +50,45 @@ console.log("script.js carregado!");
 // e marque o campo com .classList.add("invalido")
 
 
+function validar() {
+  // limpa erros anteriores
+  const campos = [campoNome, campoEmail, campoSenha, campoCurso, campoTermos];
+  campos.forEach(function (campo) {
+    campo.classList.remove("invalido");
+  });
+  mensagem.textContent = "";
+  mensagem.classList.remove("erro", "sucesso");
+
+  function erro(texto, campo) {
+    mensagem.textContent = texto;
+    mensagem.classList.add("erro");
+    campo.classList.add("invalido");
+    campo.focus();
+    return false;
+  }
+
+  if (campoNome.value.trim() === "") {
+    return erro("Preencha o nome.", campoNome);
+  }
+  if (!campoEmail.value.includes("@")) {
+    return erro("O e-mail precisa ter @.", campoEmail);
+  }
+  if (campoSenha.value.length < 6) {
+    return erro("A senha precisa ter pelo menos 6 caracteres.", campoSenha);
+  }
+  if (campoCurso.value === "") {
+    return erro("Escolha um curso.", campoCurso);
+  }
+  if (!document.querySelector('input[name="turno"]:checked')) {
+    return erro("Escolha um turno.", camposTurno[0]);
+  }
+  if (!campoTermos.checked) {
+    return erro("Aceite os termos para continuar.", campoTermos);
+  }
+  return true;
+}
+
+
 
 
 // ---------------------------------------------------------
@@ -49,6 +101,23 @@ console.log("script.js carregado!");
 //   - esconde o aviso "Nenhum aluno cadastrado ainda"
 
 
+function adicionarAluno() {
+  const li = document.createElement("li");
+
+  const nome = document.createElement("strong");
+  nome.textContent = campoNome.value.trim();
+
+  const detalhes = document.createElement("span");
+  detalhes.textContent = campoEmail.value.trim() + " · " + campoCurso.value + " · " + document.querySelector('input[name="turno"]:checked').value;
+
+  li.appendChild(nome);
+  li.appendChild(detalhes);
+  listaAlunos.appendChild(li);
+
+  listaVazia.style.display = "none";
+}
+
+
 
 
 // ---------------------------------------------------------
@@ -59,5 +128,24 @@ console.log("script.js carregado!");
 //     ...
 //   });
 // Semana que vem: eventos com calma!
+
+
+botao.addEventListener("click", function () {
+  if (validar()) {
+    adicionarAluno();
+    formulario.reset();
+    mensagem.textContent = "Aluno cadastrado com sucesso!";
+    mensagem.classList.add("sucesso");
+  }
+});
+
+// Ao limpar o formulário, tira também mensagens e marcações de erro
+formulario.addEventListener("reset", function () {
+  mensagem.textContent = "";
+  mensagem.classList.remove("erro", "sucesso");
+  [campoNome, campoEmail, campoSenha, campoCurso, campoTermos].forEach(function (c) {
+    c.classList.remove("invalido");
+  });
+});
 
 
