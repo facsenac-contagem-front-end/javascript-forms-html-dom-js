@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +9,13 @@
   <!-- Fontes: Lexend (texto), JetBrains Mono (código) e Caveat (anotação) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=JetBrains+Mono:wght@400;500&family=Lexend:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=JetBrains+Mono:wght@400;500&family=Lexend:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <div class="pagina">
@@ -26,7 +30,7 @@
     <div class="conteudo">
 
       <div class="intro">
-        <h1>Cadastro de aluno</h1>
+        <h1>Cadastro de Aluno</h1>
         <p>Preencha seus dados para entrar na turma.</p>
       </div>
 
@@ -36,7 +40,31 @@
         <div id="app" class="cartao">
 
           <!-- Seu <form> vai aqui -->
+          <form>
+            <fieldset>
+              <legend>Dados Pessoais</legend>
 
+              <label for="nome">Nome Completo:</label>
+              <input type="text" placeholder="Ex: Tamara Simões" required>
+              <label for="email">Email:</label>
+              <input type="email" placeholder="Ex: tamara.simoes@senacminas.edu.br" required>
+            </fieldset>
+            <fieldset class="options">
+              <legend>Turno</legend>
+              <input type="radio" name="turno" id="manha" checked>
+              <label for="manha">Manhã</label>
+              <input type="radio" name="turno" id="tarde">
+              <label for="tarde">Tarde</label>
+              <input type="radio" name="turno" id="noite" disabled>
+              <label for="noite">Noite</label>
+            </fieldset>
+            <input type="checkbox" name="" id="termos" required>
+            <label for="termos">Li e aceito as regras da turma</label>
+          </form>
+
+          <!-- Botão -->
+          <button class="botao-principal">Cadastrar</button>
+          <button>Limpar</button>
         </div>
 
         <!-- PARTE 2: o DOM vai criar os itens desta lista -->
@@ -60,4 +88,5 @@
   <!-- O script fica no final do body: assim o HTML já existe quando o JS roda -->
   <script src="script.js"></script>
 </body>
+
 </html>
