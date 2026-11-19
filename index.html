@@ -36,7 +36,30 @@
         <div id="app" class="cartao">
 
           <!-- Seu <form> vai aqui -->
-
+            <form >
+              <fieldset>
+                <legend>Dados Pessoas</legend>
+                <label for="">Nome Completo</label>
+                <input type="text" placeholder="Ex.: Ana Souza" required>
+                <label for="">E-mail</label>
+                <input type="email" placeholder="Ex.: ana@gmail.com" required>
+              </fieldset>
+              <fieldset class="options">
+                <legend>Turno</legend>
+                <input type="radio" name="turno" id="manha" required>
+                <label for="manha">Manhã</label>
+                <input type="radio" name="turno" id="tarde" required>
+                <label for="tarde">Tarde</label>
+                <input type="radio" name="turno" id="noite" required>
+                <label for="noite">Noite</label>
+              </fieldset>
+              <fieldset class="options">
+                <input type="checkbox" name="" id="temos" required>
+                <label for="termos">Li e aceito as regras da turma </label>
+              </fieldset>
+                <button class="botao-principal">Cadastrar</button>
+              <button>limpar</button>
+            </form>
         </div>
 
         <!-- PARTE 2: o DOM vai criar os itens desta lista -->
