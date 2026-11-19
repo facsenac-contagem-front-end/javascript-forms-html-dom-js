@@ -1,0 +1,1 @@
+function calculaTriplo 0
