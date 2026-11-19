@@ -59,5 +59,3 @@ console.log("script.js carregado!");
 //     ...
 //   });
 // Semana que vem: eventos com calma!
-
-
