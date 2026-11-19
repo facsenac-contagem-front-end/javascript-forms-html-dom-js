@@ -8,6 +8,10 @@
 // Se aparecer, o script.js está ligado ao index.html.
 console.log("script.js carregado!");
 
+const titulo = document.getElementsByTagName("h1")[0];
+//titulo.textContent = "Cadastro de Aluno - UC4 Desenvolvimento Front-end";
+titulo.style.color = "#FCD200";
+titulo.innerText = "Cadastro de Aluno - UC4 Desenvolvimento Front-end";
 
 // ---------------------------------------------------------
 // 1. CAPTURAR os elementos do formulário
