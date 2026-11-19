@@ -35,8 +35,31 @@
         <!-- PARTE 1: monte o formulário aqui dentro -->
         <div id="app" class="cartao">
 
-          <!-- Seu <form> vai aqui -->
+        <form>
+          <fieldset>
+          <legend>Dados do aluno</legend>
+          <label for="nome">Nome completo:</label>
+          <input type="text" placeholder="Ex: Simão Pedro" id="nome" name="nome" required>
+          <label for="email">Email:</label>
+          <input type="email" placeholder="Ex: pedro@apostolo.com" id="email" name="email" required>
+          </fieldset>
+          <fieldset>
+            <legend>Turno</legend>
+            <label for="turno-manha">Manhã</label>
+            <input type="radio" id="turno-manha" name="turno" value="manha">
+            <label for="turno-tarde">Tarde</label>
+            <input type="radio" id="turno-tarde" name="turno" value="tarde">
+            <label for="turno-noite">Noite</label>
+            <input type="radio" id="turno-noite" name="turno" value="noite" disabled>
+            <label for="turno-integral">Integral</label>
+            <input type="radio" id="turno-integral" name="turno" value="integral" disabled>
+          <fieldset>
 
+          <input type="checkbox" id="termos" name="termos" required>
+           <label for="termos">Li e aceito os termos de uso</label>
+          <button class="botao-principal" type="submit" id="botao-cadastrar">Cadastrar</button>
+          <button type="reset" id="botao-limpar">Limpar</button>
+        </form>
         </div>
 
         <!-- PARTE 2: o DOM vai criar os itens desta lista -->
@@ -52,7 +75,7 @@
 
     <!-- Rodapé -->
     <div class="rodape">
-      Profa. Ma. Tamara Simões · Faculdade Senac Contagem
+      Leandro Fernandes Barbosa · Faculdade Senac Contagem
     </div>
 
   </div>
