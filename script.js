@@ -8,6 +8,13 @@
 // Se aparecer, o script.js está ligado ao index.html.
 console.log("script.js carregado!");
 
+const titulo = document.getElementsByTagName("h1")[0];
+console.log(titulo);
+titulo.style.color = "white";
+titulo.style.background = "linear-gradient(to right, #0072ff, #00c6ff)";
+titulo.style.borderRadius = "8px";
+titulo.style.padding = "8px";
+titulo.innerText = "Cadastro de ESTUDANTE";
 
 // ---------------------------------------------------------
 // 1. CAPTURAR os elementos do formulário
@@ -59,5 +66,4 @@ console.log("script.js carregado!");
 //     ...
 //   });
 // Semana que vem: eventos com calma!
-
 
